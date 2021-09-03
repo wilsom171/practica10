@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Practica 10</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="content-body">
+        <div class="content-header">
+            <div class="header-logo">
+                <!-----<div class="logo-container"><img class="logo-email" src="./img/gmail.svg" alt=""></div>---->
+                <span class="title-logo"><img src="../img/email.png"></span>
+            </div>
+            <div class="header-profile">
+                <span class="user-name-header" id="user-name-header"><%= userProfile.name %></span>
+                <div class="logo-container content-img-profile-header"><img class="logo-email img-profile-header" id="img-profile-header" src=./img/icon.png></div>
+            </div>
+        </div>
+        <div class="content-body-messages">
+            <ul class="content-menu">
+                <li class="btn-redactar" id="btn-redactar">
+                    </i>Nuevo mensaje</li>
+                <li class="item-menu active-item" id="itemInbox">
+                    </i>Recibidos</li>
+                <li class="item-menu" id="itemTrash">
+                    </i>Eliminados</li>
+                <li class="item-menu" id="itemStore">
+                    </i>Archivados</li>
+                <!-- <li class="item-menu" id="itemStore">
+                    </i>Correo Docentes</li>
+                <li class="item-menu" id="itemStore">
+                    </i>Correo Estudiantes</li> -->
+            </ul>
+            <div class="container-body-messages">
+                <div class="content-menu-actual">
+                    <div class="item-menu-actual" id="item-menu-actual"><i class="fas fa-inbox icon-item-menu-actual"></i><span>Recibidos</span></div>
+                </div>
+                <div class="content-messages" id="content-messages">
+                    <% if (messages.length === 0) { %>
+                        <p class="message-vacio">No tienes mensajes</p>
+                        <% } else { %>
+                            <% for(var i=0; i < messages.length; i++) { %>
+                                <div class="message classInbox <%= messages[i].labelIds.join(' ') %>">
+                                    <div class="btn-content">
+                                        <i class="fas fa-archive" id="buttonStore"></i>
+                                        <i class="fas fa-trash" id="buttonTrash"></i>
+                                        <i class="fas fa-envelope-open" id="buttonUnread"></i>
+                                        <i class="fas fa-clock" id="buttonClock"></i>
+                                    </div>
+                                    <span class="message-remitente"><%= messages[i].From.split('"')[0] === '' 
+                                    ? messages[i].From.split('"')[1].length >= 19
+                                        ? messages[i].From.split('"')[1].substring(0, 19) + '.'
+                                        : messages[i].From.split('"')[1]
+                                    : messages[i].From.split('<')[0].length >= 19
+                                        ? messages[i].From.split('<')[0].substring(0, 19) + '.'
+                                        : messages[i].From.split('<')[0]
+                                        %></span>
+                                    <span class="message-text"><span class="message-subject"><%= messages[i].Subject %></span> -
+                                    <%= messages[i].snippet %>
+                                        </span>
+                                        <span class="message-date"><%= new Date(messages[i].Date).getHours() %>:<%= new Date(messages[i].Date).getMinutes() %></span>
+                                </div>
+                                <% } %>
+                                    <% } %>
+
+                </div>
+            </div>
+
+        </div>
+
+        <form action="/send-email" method="POST" class="content-redactar" id="content-redactar">
+            <div class="redactar-header" id="redactar-header">Mensaje Nuevo</div>
+            <div class="redactar-body">
+                <label for="para-input">Para</label>
+                <input type="text" id="para-input" name="to">
+                <label for="asunto-input">Asunto</label>
+                <input type="text" id="asunto-input" name="subject">
+                <textarea name="" id="" id="text-message-input" name='message'></textarea>
+            </div>
+            <div class="redactar-btn">
+                <button class="btn-login">Enviar</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

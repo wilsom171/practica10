@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Practica 10</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="content-login" id="content-login">
+        <div class="login-logo">
+            <h1>Bienvenido</h1>
+        </div>
+        <form class="content-inputs" action="/entry-inbox" method="POST">
+            <!-- <div class="img-profile"><img class="img" id="img" src=./img/icon.png></div>            
+            <label for="file-image"><i class="fas fa-upload icon-image"></i></label>  
+            <label>Subir imagen</label>            -->
+            <!-- <input type="file" id="file-image" style="display:none;"> -->
+            <input type="text" id="input-name" placeholder="Alias" class="input-name" name="name">
+            <textarea type="text" id="img-base64" style="display: none;" name="imgProfile"></textarea>
+            <button class="btn btn-success" id="btn-login">Ingresar a correo</button>
+        </form>
+    </div>
+    <script>
+        const btnLogin = document.getElementById('btn-login')
+        const inputName = document.getElementById('input-name')
+        const fileUpload = document.getElementById('file-image')
+        const filePreview = document.getElementById('img')
+        const inputBase64 = document.getElementById('img-base64')
+
+        inputBase64.value = filePreview.src
+
+        fileUpload.addEventListener('change', (e) => {
+            readFile(e.srcElement)
+        })
+
+        function readFile(input) {
+            if (input.files && input.files[0]) {
+                var reader = new window.FileReader()
+
+                reader.onload = function(e) {
+                    filePreview.src = e.target.result
+                    inputBase64.value = filePreview.src
+                }
+
+                reader.readAsDataURL(input.files[0])
+            }
+        }
+    </script>
+</body>
+
+</html>

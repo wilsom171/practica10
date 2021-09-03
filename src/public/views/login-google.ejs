@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        Acceder con Google Gmail
+    </title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles-access-google.css">
+</head>
+
+<body>
+    <!-- <img class="img" id="img" src=./img/icon2.png> -->
+    <table class="default">
+        <tr>      
+          <td>
+                <a href="<%= urlAccessGoogle %>" target="_blank" class="access-google-content">
+                    <span>1. Conseguir codigo de Google</span>
+                </a>
+            </td>      
+        </tr>
+        <tr>
+            <td>
+                <a href="<%= urlAccessGoogle %>" target="_blank" class="access-google-content" id="access-google">
+                    <span>2. Dar permisos a la api con tu cuenta</span>
+                </a>
+            </td>        
+          </tr>
+      </table>   
+    
+    <script>
+        const accessGoogle = document.getElementById('access-google')
+        accessGoogle.addEventListener('click', () => {
+            location.href = '/code-google'
+        })
+    </script>
+</body>
+
+</html>
