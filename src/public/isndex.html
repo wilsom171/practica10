@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Practica 10</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="content-login" id="content-login">
+        <div class="login-logo">
+            <div class="logo-container"><img class="logo-email" src="./img/gmail.svg" alt=""></div>
+            <span class="title-logo">Practica 10</span>
+        </div>
+        <div class="content-inputs">
+            <div class="img-profile"><img class="img" id="img" src="./img/boy.png"></div>
+            <label for="file-image"><i class="far fa-images icon-image"></i></label>
+            <input type="file" name="file-image" id="file-image" style="display:none;">
+            <input type="text" id="input-name" placeholder="Ingrese su nickname" class="input-name">
+            <button class="btn-login" id="btn-login">Ingresar a GMAIL</button>
+        </div>
+    </div>
+
+    <div class="content-body">
+        <div class="content-header">
+            <div class="header-logo">
+                <div class="logo-container"><img class="logo-email" src="./img/gmail.svg" alt=""></div>
+                <span class="title-logo">Practica 10</span>
+            </div>
+            <div class="header-profile">
+                <span class="user-name-header" id="user-name-header"></span>
+                <div class="logo-container content-img-profile-header"><img class="logo-email img-profile-header" id="img-profile-header"></div>
+            </div>
+        </div>
+        <div class="content-body-messages">
+            <ul class="content-menu">
+                <li class="btn-redactar" id="btn-redactar"><i class="fas fa-plus"></i>Redactar</li>
+                <li class="item-menu active-item"><i class="fas fa-inbox icon-item-menu"></i>Recibidos</li>
+                <li class="item-menu"><i class="fas fa-trash icon-item--menu"></i>Eliminados</li>
+                <li class="item-menu"><i class="fas fa-archive icon-item-menu"></i>Archivados</li>
+                <li class="item-menu"><i class="fas fa-archive"></i> Correo Docentes</li>
+                <li class="item-menu"><i class="fas fa-archive"></i> Correo Estudiantes</li>
+            </ul>
+            <div class="container-body-messages">
+                <div class="content-menu-actual">
+                    <div class="item-menu-actual"><i class="fas fa-inbox icon-item-menu-actual"></i>Recibidos</div>
+                </div>
+                <div class="content-messages">
+                    <div class="message">
+                        <div class="btn-content">
+                            <i class="fas fa-archive"></i>
+                            <i class="fas fa-trash"></i>
+                            <i class="fas fa-envelope-open"></i>
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <span class="message-remitente">Macas - Landi - Yanez</span>
+                    </div>
+                    <div class="message">
+                        <div class="btn-content">
+                            <i class="fas fa-archive"></i>
+                            <i class="fas fa-trash"></i>
+                            <i class="fas fa-envelope-open"></i>
+                            <i class="fas fa-clock"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="content-redactar" id="content-redactar">
+            <div class="redactar-header" id="redactar-header">Nuevo mensaje</div>
+            <div class="redactar-body">
+                <label for="para-input">Para: </label>
+                <input type="text" id="para-input">
+                <label for="asunto-input">Asunto: </label>
+                <input type="text" id="asunto-input">
+                <textarea name="" id="" id="text-message-input"></textarea>
+            </div>
+            <div class="redactar-btn">
+                <button class="btn-login">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
