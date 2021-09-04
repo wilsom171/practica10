@@ -15,7 +15,7 @@
     <div class="content-body">
         <div class="content-header">
             <div class="header-logo">
-                <!-----<div class="logo-container"><img class="logo-email" src="./img/gmail.svg" alt=""></div>---->
+                <div class="logo-container"><img class="logo-email" src="./img/gmail.svg" alt=""></div>
                 <span class="title-logo"><img src="../img/email.png"></span>
             </div>
             <div class="header-profile">
@@ -33,10 +33,10 @@
                     </i>Eliminados</li>
                 <li class="item-menu" id="itemStore">
                     </i>Archivados</li>
-                <!-- <li class="item-menu" id="itemStore">
+                <li class="item-menu" id="itemStore">
                     </i>Correo Docentes</li>
                 <li class="item-menu" id="itemStore">
-                    </i>Correo Estudiantes</li> -->
+                    </i>Correo Estudiantes</li>
             </ul>
             <div class="container-body-messages">
                 <div class="content-menu-actual">
@@ -54,14 +54,7 @@
                                         <i class="fas fa-envelope-open" id="buttonUnread"></i>
                                         <i class="fas fa-clock" id="buttonClock"></i>
                                     </div>
-                                    <span class="message-remitente"><%= messages[i].From.split('"')[0] === '' 
-                                    ? messages[i].From.split('"')[1].length >= 19
-                                        ? messages[i].From.split('"')[1].substring(0, 19) + '.'
-                                        : messages[i].From.split('"')[1]
-                                    : messages[i].From.split('<')[0].length >= 19
-                                        ? messages[i].From.split('<')[0].substring(0, 19) + '.'
-                                        : messages[i].From.split('<')[0]
-                                        %></span>
+                                    
                                     <span class="message-text"><span class="message-subject"><%= messages[i].Subject %></span> -
                                     <%= messages[i].snippet %>
                                         </span>
